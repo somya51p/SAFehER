@@ -183,3 +183,68 @@ def faq(request):
 
     d = {'notes':notes}
     return render(request, 'faq.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def pending_queries(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="pending")
+
+    d = {'notes':notes}
+    return render(request, 'pending_queries.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def accepted_queries(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="Accept")
+
+    d = {'notes':notes}
+    return render(request, 'accepted_queries.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def rejected_queries(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="Reject")
+
+    d = {'notes':notes}
+    return render(request, 'rejected_queries.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def all_queries(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.all()
+
+    d = {'notes':notes}
+    return render(request, 'all_queries.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def assign_status(request,pid):
+    if not request.user.is_staff:
+        return redirect('login_admin')
+    notes = Notes.objects.get(id=pid)
+    error = ""
+    if request.method == 'POST':
+        s = request.POST['status']
+        try:
+            notes.status = s
+            notes.save()
+            error="no"
+        except:
+            error="yes"
+    d={'notes':notes,'error':error}
+    return render(request, 'assign_status.html', d)
+
+@login_required
+def delete_notes(request,pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    notes = Notes.objects.get(id=pid)
+    notes.delete()
+    return redirect('all_notes')

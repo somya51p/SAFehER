@@ -1,0 +1,64 @@
+{% extends 'admin_nav.html' %}
+
+{% load static %}
+{% block body %}
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"> -->
+
+<style>
+    .doabout{
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>ASSIGN STATUS</b></h2>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <label>Query ID</label>
+        <input type="text" name="notesid" class="form-control" value={{notes.id}} readonly>
+
+        <label>Status</label>
+        <select name="status" class="form-control">
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+        <br>
+        <input  class="btn btn-primary" type="submit" value="Submit">
+    </form>
+
+
+
+</div>
+
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Status update Successfull');
+    window.location=("{% url 'all_queries' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went Wrong, Try again');
+</script>
+{% endifequal %}
+
+
+{% endblock %}
+

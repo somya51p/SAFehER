@@ -28,26 +28,26 @@ h2,h4{
     <div class="row">
         <div class="col-sm-3 text-center mydiv">
             <div class="container1">
-                <h2 class="text-dark">1</h2>
-                <a href="#"><h4 class="text-dark">Pending Notes</h4></a>
+                <h2 class="text-dark">{{p}} </h2>
+                <a href="{% url 'pending_queries' %}"><h4 class="text-dark">Pending Queries</h4></a>
             </div>
         </div>
         <div class="col-sm-3 text-center mydiv">
             <div class="container1">
-                <h2 class="text-dark">2</h2>
-                <a href="#"><h4 class="text-dark">Accepted Notes</h4></a>
+                <h2 class="text-dark"> {{a}} </h2>
+                <a href="{% url 'accepted_queries' %}"><h4 class="text-dark">Accepted Queries</h4></a>
             </div>
         </div>
         <div class="col-sm-3 text-center mydiv">
             <div class="container1">
-                <h2 class="text-dark">3</h2>
-                <a href="#"><h4 class="text-dark">Rejected Notes</h4></a>
+                <h2 class="text-dark"> {{r}} </h2>
+                <a href="{% url 'rejected_queries' %}"><h4 class="text-dark">Rejected Queries</h4></a>
             </div>
         </div>
         <div class="col-sm-3 text-center mydiv">
             <div class="container1">
-                <h2 class="text-dark">4</h2>
-                <a href="#"><h4 class="text-dark">All Notes</h4></a>
+                <h2 class="text-dark"> {{all}} </h2>
+                <a href="{% url 'all_queries' %}"><h4 class="text-dark">All Queries</h4></a>
             </div>
         </div>
     </div>
