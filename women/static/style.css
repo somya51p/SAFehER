@@ -22,19 +22,20 @@ body{
     padding-left: 30px;
     padding-right: 30px;
     transition: 0.5s;
+    background: linear-gradient(to left bottom, rgba(5, 213, 217, 0.767), rgba(101, 23, 203, 0.7), rgba(203, 33, 141, 0.7));
+    color: aliceblue;
 }
 
 .bb:hover{
     color:snow;
     background-color: green;
-    transition: 0.5s;
+    transition: 0.8s;
     font-weight: bold;
     border-radius: 10px;
+    transform: scale(1.15);
 }
 
 .doabout{
-    color:white;
-    background: linear-gradient(grey,black);
     margin-top:30px;
     padding-top: 10px;
 }
@@ -50,7 +51,8 @@ body{
     background: linear-gradient(to left bottom, rgba(5, 213, 217, 0.767), rgba(101, 23, 203, 0.7), rgba(203, 33, 141, 0.7));
     border-radius: 10px;
     transition: 0.5s;
-    color: white;
+    color: snow;
+    transform: scale(1.05);
 }
 .navbar-brand{
     color: #bd2eaa;
