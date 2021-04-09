@@ -97,6 +97,15 @@
                           <a href="{% url 'all_queries' %}">ALL</a>
                         </div>
                       </div></li>
+                      <li><div class="dropdown">
+                        <button class="dropbtn">VIEW MAGAZINES</button>
+                        <div class="dropdown-content">
+                          <a href="{% url 'pending_m' %}">PENDING</a>
+                          <a href="{% url 'accepted_m' %}">ACCEPTED</a>
+                          <a href="{% url 'rejected_m' %}">REJECTED</a>
+                          <a href="{% url 'all_m' %}">ALL</a>
+                        </div>
+                      </div></li>
                     <li class="nav-item">
                         <a href="{% url 'view_users' %}" class="nav-link ">View Users</a>
                     </li>

@@ -156,6 +156,10 @@ def vaccine(request):
     return render(request, 'vaccine.html')
 
 @login_required
+def magazine(request):
+    return render(request, 'magazine.html')
+
+@login_required
 def upload_queries(request):
     if not request.user.is_authenticated:
         return redirect('login')
@@ -243,6 +247,71 @@ def assign_status(request,pid):
 
 @login_required
 def delete_notes(request,pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    notes = Notes.objects.get(id=pid)
+    notes.delete()
+    return redirect('all_queries')
+
+@staff_member_required(login_url='/login_admin/')
+def pending_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="pending")
+
+    d = {'notes':notes}
+    return render(request, 'pending_m.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def accepted_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="Accept")
+
+    d = {'notes':notes}
+    return render(request, 'accepted_m.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def rejected_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.filter(status="Reject")
+
+    d = {'notes':notes}
+    return render(request, 'rejected_m.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def all_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+
+    notes = Notes.objects.all()
+
+    d = {'notes':notes}
+    return render(request, 'all_m.html',d)
+
+@staff_member_required(login_url='/login_admin/')
+def assignstatus_m(request,pid):
+    if not request.user.is_staff:
+        return redirect('login_admin')
+    notes = Notes.objects.get(id=pid)
+    error = ""
+    if request.method == 'POST':
+        s = request.POST['status']
+        try:
+            notes.status = s
+            notes.save()
+            error="no"
+        except:
+            error="yes"
+    d={'notes':notes,'error':error}
+    return render(request, 'assign_status.html', d)
+
+@login_required
+def delete_m(request,pid):
     if not request.user.is_staff:
         return redirect('login')
     notes = Notes.objects.get(id=pid)
