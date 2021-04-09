@@ -24,7 +24,7 @@ Followed by these commands in terminal itself:
 
 *************************************************************
 
-To run the Alice app then type:
+To run the SAFehER app then type:
 
 ###### python manage.py runserver
 
@@ -39,7 +39,7 @@ Fill the required details and it would be created..
 
 **************************************************************
 
-# Enjoy using the Alice Web App..
+# Enjoy using the SAFehER Web App..
 
 **************************************************************
 **************************************************************
