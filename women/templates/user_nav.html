@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>SAFehER</title>
 
@@ -18,35 +19,35 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
         <div class="container-fluid">
-            <a href="{% url 'home' %}" class="navbar-brand text-warning font-weight-bold">SAFehER</a>
+            <a href="{% url 'home' %}" class="navbar-brand font-weight-bold" >SAFehER</a>
             <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#collapsenavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse text-center" id="collapsenavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="{% url 'browse' %}" class="nav-link text-white">Browse</a>
+                        <a href="{% url 'browse' %}" class="nav-link ">Browse</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'bmi' %}" class="nav-link text-white">BMI Calculation</a>
+                        <a href="{% url 'bmi' %}" class="nav-link ">BMI Calculation</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'menstrual' %}" class="nav-link text-white">Menstrual Track</a>
+                        <a href="{% url 'menstrual' %}" class="nav-link ">Menstrual Track</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Magazines</a>
+                        <a href="#" class="nav-link ">Magazines</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Vaccines</a>
+                        <a href="{% url 'vaccine' %}" class="nav-link ">Vaccines</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'logout' %}" class="nav-link text-white">Logout</a>
+                        <a href="{% url 'logout' %}" class="nav-link ">Logout</a>
                     </li>
                 </ul>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-warning dropdown toggle" data-toggle="dropdown">Welcome {{request.user.first_name}}</button>
+                    <button type="button" class="btn btn-warning text-white" style="background: linear-gradient(to left bottom, rgba(5, 213, 217, 0.767), rgba(101, 23, 203, 0.7), rgba(203, 33, 141, 0.7));" data-toggle="dropdown">Welcome {{request.user.first_name}}</button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'profile' %}">PROFILE</a>
                         <a class="dropdown-item" href="#">EDIT PROFILE</a>

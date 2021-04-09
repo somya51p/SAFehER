@@ -150,3 +150,7 @@ def bmi(request):
 @login_required
 def browse(request):
     return render(request, 'browse.html')
+
+@login_required
+def vaccine(request):
+    return render(request, 'vaccine.html')

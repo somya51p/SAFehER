@@ -32,6 +32,7 @@ urlpatterns = [
     path('menstrual/', menstrual, name='menstrual'),
     path('bmi/', bmi, name='bmi'),
     path('browse/', browse, name='browse'),
+    path('vaccine/', vaccine, name='vaccine'),
     path('login_admin/', login_admin, name='login_admin'),
     path('admin_home/', admin_home, name='admin_home'),
     path('view_users/', view_users, name='view_users'),
