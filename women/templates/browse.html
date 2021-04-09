@@ -202,6 +202,21 @@ img {vertical-align: middle;}
   margin-top: 5px;
   font-family: 'Overpass';
 }
+
+.card{
+    height: 35vh;
+    border-color: rgb(224, 129, 147);
+    border: 5px;
+}
+
+.card-img-top{
+    height: 30vh;
+}
+
+.card-title{
+  text-align: center;
+  font-weight: 900;
+}
 </style>
 <div class="container cc">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
@@ -239,6 +254,39 @@ img {vertical-align: middle;}
           <span class="dot"></span>
           <span class="dot"></span>
         </div>
+
+<br><br>
+
+    <div class="card-deck">
+      <div class="card">
+        <a href="https://www.webmd.com/lung/coronavirus" class="card-link">
+          <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Information</h5>
+        </div>
+      </div>
+      <div class="card">
+        <a href="{% url 'upload_queries' %}" class="card-link">
+          <img src="{% static 'images/2.jpg' %}" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Upload Queries</h5>
+        </div>
+      </div>
+      <div class="card">
+        <a href="https://www.mayoclinic.org/diseases-conditions/amenorrhea/symptoms-causes/syc-20369299" class="card-link">
+        <img src="{% static 'images/3.png' %}" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">FAQ</h5>
+        </div>
+      </div>
+      <div class="card">
+        <a href="https://www.mayoclinic.org/diseases-conditions/amenorrhea/symptoms-causes/syc-20369299" class="card-link">
+        <img src="{% static 'images/4.png' %}" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">Chat</h5>
+        </div>
+      </div>
+    </div>
 
         <script>
         var slideIndex = 0;

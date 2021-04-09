@@ -154,3 +154,7 @@ def browse(request):
 @login_required
 def vaccine(request):
     return render(request, 'vaccine.html')
+
+@login_required
+def upload_queries(request):
+    return render(request, 'upload_queries.html')
