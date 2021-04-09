@@ -18,7 +18,7 @@ Followed by these commands in terminal itself:
 
 ###### python manage.py migrate
 
-###### python manage.py makemigrations
+###### python manage.py makemigrations women
 
 ###### python manage.py migrate
 
