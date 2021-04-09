@@ -157,4 +157,19 @@ def vaccine(request):
 
 @login_required
 def upload_queries(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    error = ""
+    if request.method == 'POST':
+        n = request.FILES['notesfile']
+        f = request.POST['filetype']
+        d = request.POST['description']
+        u = User.objects.filter(username=request.user.username).first()
+        try:
+            Notes.objects.create(user=u,uploadingdate=date.today(),branch=b,subject=s,notesfile=n,filetype=f,description=d,status="pending")
+
+            error="no"
+        except:
+            error="yes"
+    d={'error':error}
     return render(request, 'upload_queries.html')

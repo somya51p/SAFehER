@@ -211,6 +211,11 @@ img {vertical-align: middle;}
 .card-img-top{
     height: 30vh;
 }
+
+.card-title{
+  text-align: center;
+  font-weight: 900;
+}
 </style>
 <div class="container cc">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
@@ -276,35 +281,28 @@ img {vertical-align: middle;}
     <h1 class="pageHeadingBig">Prevention is better than cure</h1>
     </div>
 
-    <div class="card-deck">
+      <div class="card-deck">
         <div class="card">
-          <img src="{% static 'images/corona.jpg' %}" class="card-img-top" alt="...">
+          <a href="https://www.webmd.com/lung/coronavirus" class="card-link">
+            <img src="{% static 'images/corona.jpg' %}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h5 class="card-title">Corona</h5>
           </div>
-          <div class="card-body">
-            <a href="https://www.webmd.com/lung/coronavirus" class="card-link">Open</a>
-          </div>
         </div>
         <div class="card">
-          <img src="{% static 'images/menopause.jpg' %}" class="card-img-top" alt="...">
+          <a href="https://www.mayoclinic.org/diseases-conditions/menopause/symptoms-causes/syc-20353397" class="card-link">
+            <img src="{% static 'images/menopause.jpg' %}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h5 class="card-title">Menopause</h5>
           </div>
-          <div class="card-body">
-            <a href="https://www.mayoclinic.org/diseases-conditions/menopause/symptoms-causes/syc-20353397" class="card-link">Open</a>
-          </div>
         </div>
         <div class="card">
-          <img src="{% static 'images/amenorrhea.jpg' %}" class="card-img-top" alt="...">
+          <a href="https://www.mayoclinic.org/diseases-conditions/amenorrhea/symptoms-causes/syc-20369299" class="card-link">
+          <img src="{% static 'images/amenorrhea.jpg' %}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <h5 class="card-title">Amnenorrhea</h5>
           </div>
-          <div class="card-body">
-            <a href="https://www.mayoclinic.org/diseases-conditions/amenorrhea/symptoms-causes/syc-20369299" class="card-link">Open</a>
-          </div>
         </div>
       </div>
-
 
     {% endblock %}
