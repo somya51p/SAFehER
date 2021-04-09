@@ -35,7 +35,7 @@
                 <th>Uploaded by</th>
                 <!-- <th>Class</th>
                 <th>Download notes</th> -->
-                <th>Open notes</th>
+                <th>Open Report</th>
                 <th>Status</th>
                 <!-- <th>Description</th> -->
                 <th>Assign</th>
@@ -50,11 +50,11 @@
                 <th>{{ i.user.username }}</th>
                 <!-- <th>{{ i.branch }}</th>
                 <th><a href="{{ i.notesfile.url }}" class="btn btn-warning" download>Download</a></th> -->
-                <th><a href="{{ i.notesfile.url }}" class="btn btn-warning">Open notes</a></th>
+                <th><a href="{{ i.reportfile.url }}" class="bbb btn btn-warning">Open Report</a></th>
                 <th>{{ i.status }}</th>
                 <!-- <th>{{ i.description }}</th> -->
-                <th><a href="{% url 'assign_status' i.id %}" class="btn btn-warning" >Assign status</a></th>
-                <th><a href="{% url 'delete_notes' i.id %}" class="btn btn-warning" onclick="return confirm('Do you really want to delete notes?')">Delete</a></th>
+                <th><a href="{% url 'assign_status' i.id %}" class="bbb btn btn-warning" >Assign status</a></th>
+                <th><a href="{% url 'delete_notes' i.id %}" class="btn btn-danger" onclick="return confirm('Do you really want to delete notes?')">Delete</a></th>
             </tr>
             {% endfor %}
         </tbody>
