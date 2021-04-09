@@ -166,10 +166,20 @@ def upload_queries(request):
         d = request.POST['description']
         u = User.objects.filter(username=request.user.username).first()
         try:
-            Notes.objects.create(user=u,uploadingdate=date.today(),branch=b,subject=s,notesfile=n,filetype=f,description=d,status="pending")
+            Notes.objects.create(user=u,uploadingdate=date.today(),reportfile=n,filetype=f,description=d,status="pending")
 
             error="no"
         except:
             error="yes"
     d={'error':error}
     return render(request, 'upload_queries.html')
+
+@login_required
+def faq(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    user = User.objects.get(id=request.user.id)
+    notes = Notes.objects.filter(status="Accept")
+
+    d = {'notes':notes}
+    return render(request, 'faq.html',d)
