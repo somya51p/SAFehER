@@ -1,0 +1,61 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+.row{
+    background-color: lightyellow;
+}
+.container1{
+    margin-top: 52px;
+    background-color: gold;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+h2,h4{
+    padding: 10px;
+}
+.mydiv:hover{
+    transform: translateY(-10px);
+}
+.myDiv{
+    margin-top: 380px;
+    font-weight: bold;
+}
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">1</h2>
+                <a href="#"><h4 class="text-dark">Pending Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">2</h2>
+                <a href="#"><h4 class="text-dark">Accepted Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">3</h2>
+                <a href="#"><h4 class="text-dark">Rejected Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">4</h2>
+                <a href="#"><h4 class="text-dark">All Notes</h4></a>
+            </div>
+        </div>
+    </div>
+    <footer class="container myDiv">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded text-center">CopyRight 2020,All Rights Reserved</div>
+    </footer>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+.image{
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(orange,orangered);
+    opacity : 0.8;
+    background-repeat : no-repeat;
+    background-position : center;
+}
+.backii{
+    padding-top: 220px;
+    font-weight: bold;
+    font-family: serif;
+    color: black;
+
+}
+
+.bb{
+    margin-left: 205px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.5s;
+}
+
+.bb:hover{
+    color:snow;
+    background-color: green;
+    transition: 0.5s;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.doabout{
+    color:white;
+    background: linear-gradient(grey,black);
+    margin-top:30px;
+    padding-top: 10px;
+}
+
+.jumbotron{
+    color: black;
+}
+.nav-item:hover{
+    background-color: orange;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+

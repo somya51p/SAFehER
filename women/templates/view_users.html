@@ -1,0 +1,56 @@
+{% extends 'admin_nav.html' %}
+
+{% load static %}
+{% block body %}
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"> -->
+
+
+<style>
+    .doabout{
+        color:white;
+        background: linear-gradient(grey,black);
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>VIEW USERS</b></h2>
+    <hr>
+    <table class="table table=bordered" id="example">
+        <thead>
+            <tr>
+                <th>Sr.no.</th>
+                <th>Full name</th>
+                <th>Email id</th>
+                <th>Contact</th>
+                <th>Role</th>
+                <th>Delete</th>
+            </tr>
+            {% for i in users %}
+            <tr>
+                <th>{{ forloop.counter }}</th>
+                <th>{{ i.user.first_name }}</th>
+                <th>{{ i.user.username }}</th>
+                <th>{{ i.contact }}</th>
+                <th>{{ i.role }}</th>
+                <th><a href="{% url 'delete_user' i.id %}" class="btn btn-warning" onclick="return confirm('Do you really want to delete user?')">Delete</a></th>
+            </tr>
+            {% endfor %}
+        </thead>
+
+    </table>
+
+</div>
+{% endblock %}

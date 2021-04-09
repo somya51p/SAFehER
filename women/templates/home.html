@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon3.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font/flaticon.css">
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1.6;
+  font-family: 'Open Sans',
+    sans-serif;
+}
+
+.footer {
+  height: 20vh;
+  background-color: #222222;
+  color: #ffffff7e;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer__icon {
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.footer__icon .foot-icon {
+  transition: all .2s;
+}
+
+.footer__icon .foot-icon:hover {
+  background-image: linear-gradient(to right top, #dce79a, #e152e6, #f05858);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+
+header {
+  height: 100vh;
+  background-image: linear-gradient(to right top, rgba(222, 224, 91, 0.767), rgba(178, 233, 106, 0.7), rgba(203, 33, 141, 0.7));
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  background-attachment: fixed;
+}
+
+header .header {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 10.5%;
+}
+
+header .header__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 5rem;
+}
+
+header .header__cta a {
+  color: #6517cb;
+}
+
+header .header__heading {
+  width: 100%;
+  line-height: 1.2;
+  font-family: 'Nunito',
+    sans-serif;
+  font-size: 8rem;
+  letter-spacing: .4rem;
+  font-weight: lighter;
+  color: rgb(10, 10, 10);
+  margin-bottom: 2rem;
+}
+
+header .header__bg {
+  position: relative;
+  z-index: -1;
+}
+
+header .header__bg img {
+  display: block;
+  width: 49rem;
+  position: relative;
+  bottom: 0;
+}
+
+.nav {
+  background-color: #fffdfd;
+  height: 12%;
+  display: flex;
+  color: rgb(3, 3, 3);
+  justify-content: space-between;
+  padding: 0 3rem;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  transition: top .3s ease-out;
+  width: 100%;
+  z-index: 10000;
+}
+
+.nav__title {
+  display: flex;
+  align-items: center;
+  font-family: 'Nunito',
+    sans-serif;
+}
+
+.nav__title>*:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav__title img {
+  width: 10rem;
+}
+
+.nav__title--tag {
+  font-size: 2.3rem;
+  letter-spacing: .3rem;
+  font-weight: 700;
+}
+
+.nav__list {
+  font-family: inherit;
+  font-size: 1.6rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list--item:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.nav__list--item {
+  color: rgb(15, 15, 15);
+  transition: all .3s ease-in-out;
+}
+
+.nav__list--item:hover {
+  transform: translateY(-1px);
+  cursor: pointer;
+  color: #bd2eaa;
+  font-weight: 700;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 400;
+  border: 2.5px solid #6517cb;
+  border-radius: 15px;
+  padding: .25rem 1rem;
+  transition: all .4s;
+}
+
+.btn:hover {
+  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.4);
+  padding: .25rem 1rem;
+  border: none;
+  color: #fff;
+  transform: translateY(-3px);
+  background-image: linear-gradient(to left bottom, rgba(5, 213, 217, 0.767), rgba(101, 23, 203, 0.7), rgba(203, 33, 141, 0.7));
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.about {
+  padding: 8rem;
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+}
+
+.about__text {
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+}
+
+
+
+.about__text--group:not(:last-child) {
+  margin: 2rem 0;
+}
+
+.about__graphic {
+  height: 100%;
+  width: 50%;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: .5rem;
+  background-color: #f4f6ff;
+}
+
+.about__graphic--item1 {
+  grid-row: 1/span 2;
+  grid-column: 1/3;
+}
+
+.about__graphic--item2 {
+  grid-row: 2 / -1;
+  grid-column: 5 / -1;
+}
+
+.about__graphic--item3 {
+  grid-row: 3/-1;
+  grid-column: 1 / span 2;
+}
+
+.about__graphic--item5 {
+  grid-row: 1 / 2;
+  grid-column: 4 / -1;
+}
+
+.about__graphic--item6 {
+  grid-row: 2 / -1;
+  grid-column: 3 / 5;
+}
+
+.about__graphic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heading--1 {
+  font-family: 'Nunito',
+    sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right top, #05d5d9, #6517cb, #cb218d);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.heading--2 {
+  margin-bottom: .6rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.text {
+  font-size: 1.6rem;
+  width: 70%;
+}
+
+
+
+.cta {
+  height: 80vh;
+  background-image: linear-gradient(to left top, rgba(5, 213, 217, 0.767), rgba(125, 216, 83, 0.7), rgba(186, 203, 33, 0.7));
+  background-size: cover;
+  padding: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cta__graphic {
+  width: 50%;
+  margin-right: 3rem;
+  align-self: center;
+}
+
+.cta__graphic img {
+  display: block;
+  width: 95%;
+  float: right;
+}
+
+.cta__text {
+  padding: 3rem;
+  width: 40%;
+}
+
+.cta__text .heading--1 {
+  color: #fff;
+  background-image: none;
+}
+
+.cta__text .heading--2 {
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  color: #222222;
+}
+
+.cta__text .btn {
+  color: #6517cb;
+}
+
+.cta__text .btn:hover {
+  color: #fff;
+}
+
+.fade {
+  opacity: 0;
+}
+    </style>
+    <script src="https://kit.fontawesome.com/68bbd08d56.js" crossorigin="anonymous"></script>
+    <title>SAFehER | Beauty It's Time To Beast</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__title">
+            <div class="nav__title--logo"><img src="{% static 'images/icon3.png' %}" alt="SAFehER icon"></div>
+            <div class="nav__title--tag">SAFehER</div>
+        </div>
+        <ul class="nav__list">
+            <li class="nav__list--item"> <a href="#about">ABOUT</a></li>
+            <li class="nav__list--item"> <a href="{% url 'signup' %}">SIGNUP</a></li>
+            <li class="nav__list--item"> <a href="{% url 'login' %}">LOGIN</a></li>
+            <li class="nav__list--item"> <a href="{% url 'login_admin' %}">ADMIN</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header">
+            <div class="header__cta">
+                <div class="header__heading">Don't be the same,<br>Be better.</div>
+                <a href="{% url 'signup' %}" class="btn">Get started for free</a>
+            </div>
+
+            <div class="header__bg">
+                <img src="{% static 'images/second.jpg' %}" alt="Girl listening to music">
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="about__text">
+            <h1 class="heading--1">Word from the founder</h1>
+
+            <div class="about__text--group">
+                <p class="text">"SAFehER is your go-to destination for new workouts,
+                    legit nutrition advice and weight loss tips, the latest health news, healthy recipes,
+                    and more.."</p>
+            </div>
+            <div class="about__text--group">
+                <p class="text">"It is a one stop health a fitness application for women through most
+                     stages of life – it includes regular fitness data, energy indicator,
+                     health monitors, guides through the health cycles that women may go
+                     through, and helps through specific health situations or
+                     illness – probably also helps women through rhythm of medication and
+                      tests that might be required."
+                </p>
+
+            </div>
+            <div class="about__text--group">
+            <p class="text"> - Pseudo Coders</p>
+            </div>
+
+        </div>
+
+        <div class="about__graphic">
+            <div class="about__graphic--item about__graphic--item1"><img alt="" src="{% static 'images/about1.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item2"><img alt="" src="{% static 'images/about2.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item3"><img alt="" src="{% static 'images/about3.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item4"><img alt="" src="{% static 'images/about4.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item5"><img alt="" src="{% static 'images/about5.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item6"><img alt="" src="{% static 'images/about6.jpg' %}"></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="about__text">
+            <h1 class="heading--1">Engaging Women in Community Sports</h1>
+
+            <div class="about__text--group" >
+                <p class="text" >
+                 Females are less likely to participate in and lead sports programs and thus missing opportunities
+                 for physical, social and mental health benefits.
+                 </p>
+            </div>
+            <div class="about__text--group">
+                <p class="text" > SAFehER serves as a platform where females can come together and find other females
+                 with similar interests in sports, ultimately increasing their participaton in the community sport.
+                 This will not only help them to be mentally and physically fit, but will also help them meet different
+                 women and empower each other.
+                </p>
+
+            </div>
+
+
+        </div>
+
+        <div class="about__graphic">
+            <div class="about__graphic--item about__graphic--item1"><img alt="" src="{% static 'images/sport1.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item2"><img alt="" src="{% static 'images/sport2.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item3"><img alt="" src="{% static 'images/sport3.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item4"><img alt="" src="{% static 'images/sport4.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item5"><img alt="" src="{% static 'images/sport5.jpg' %}"></div>
+            <div class="about__graphic--item about__graphic--item6"><img alt="" src="{% static 'images/sport6.jpg' %}"></div>
+        </div>
+
+    </section>
+
+    <section class="cta">
+        <div class="cta__graphic">
+            <img src="{% static 'images/herobg.png' %}" alt="girl jumping">
+        </div>
+        <div class="cta__text">
+            <h1 class="heading--1">One stop for fitness and health .</h1>
+            <div class="heading--2">Create your free account today.</div>
+            <a href="{% url 'signup' %}" class="btn">Get started for free</a>
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer__icon">
+           <a href="https://twitter.com/somya51p/"> <i class="fab fa-twitter foot-icon"></i></a>
+           <a href="https://www.facebook.com/people/Sakshi-Sharma/100009192201323"> <i class="fab fa-facebook-f foot-icon"></i></a>
+           <a href="https://www.instagram.com/_somya2001p_/"> <i class="fab fa-instagram foot-icon"></i></a>
+           <a href="https://www.linkedin.com/in/somya51p/"> <i class="fas fa-envelope foot-icon"></i></a>
+        </div>
+        <p>© Copyright 2020 SAFehER</p>
+    </footer>
+
+
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector(".nav").style.top = "0";
+            } else {
+                document.querySelector(".nav").style.top = "-100%";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

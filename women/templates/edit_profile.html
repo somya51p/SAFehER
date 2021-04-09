@@ -1,0 +1,57 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5">
+    <h2 class="text-center"> EDIT PROFILE</h2>
+    <hr><hr><br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label>FirstName</label>
+                        <input type="text" class="form-control" value="{{data.user.first_name}}" name="firstname">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label>FirstName</label>
+                        <input type="text" class="form-control" value="{{data.user.last_name}}" name="lastname">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Email Id</label>
+                        <input type="text" class="form-control" value="{{data.user.username}}" name="username" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Contact</label>
+                        <input type="text" class="form-control" value="{{data.contact}}" name="contact">
+                    </div>
+                </div>
+                <input type="submit" value="Update" class="bb btn btn-warning" >
+            </form>
+        </div>
+    </div>
+
+
+
+
+   </div>
+
+
+
+   {% if error %}
+   <script>
+       alert('Profile updated sucessfully');
+       window.location = "{% url 'profile' %}";
+   </script>
+   {% endif %}
+
+
+{% endblock %}
