@@ -78,7 +78,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md bg-light navbar-light">
-        <div class="container">
+        <div class="container-fluid">
             <a href="{% url 'home' %}" class="navbar-brand font-weight-bold">SAFehER</a>
             <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#collapsenavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -97,21 +97,18 @@
                           <a href="{% url 'all_queries' %}">ALL</a>
                         </div>
                       </div></li>
-                      <li><div class="dropdown">
-                        <button class="dropbtn">VIEW MAGAZINES</button>
-                        <div class="dropdown-content">
-                          <a href="{% url 'pending_m' %}">PENDING</a>
-                          <a href="{% url 'accepted_m' %}">ACCEPTED</a>
-                          <a href="{% url 'rejected_m' %}">REJECTED</a>
-                          <a href="{% url 'all_m' %}">ALL</a>
-                        </div>
-                      </div></li>
                     <li class="nav-item">
                         <a href="{% url 'view_users' %}" class="nav-link ">View Users</a>
                     </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link ">View Uploads</a>
-                  </li>
+                    <li><div class="dropdown">
+                      <button class="dropbtn">VIEW MAGAZINES</button>
+                      <div class="dropdown-content">
+                        <a href="{% url 'pending_m' %}">PENDING</a>
+                        <a href="{% url 'accepted_m' %}">ACCEPTED</a>
+                        <a href="{% url 'rejected_m' %}">REJECTED</a>
+                        <a href="{% url 'all_m' %}">ALL</a>
+                      </div>
+                    </div></li>
                     <li class="nav-item">
                         <a href="{% url 'logout' %}" class="nav-link ">Logout</a>
                     </li>
