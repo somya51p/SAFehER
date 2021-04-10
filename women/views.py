@@ -162,7 +162,7 @@ def vaccine(request):
 @login_required
 def magazine(request):
     return render(request, 'magazine.html')
-    
+
 @login_required
 def helpline(request):
     return render(request, 'helpline.html')
@@ -266,7 +266,7 @@ def pending_m(request):
     if not request.user.is_authenticated:
         return redirect('login_admin')
 
-    notes = Notes.objects.filter(status="pending")
+    notes = Magazines.objects.filter(status="pending")
 
     d = {'notes':notes}
     return render(request, 'pending_m.html',d)
@@ -276,7 +276,7 @@ def accepted_m(request):
     if not request.user.is_authenticated:
         return redirect('login_admin')
 
-    notes = Notes.objects.filter(status="Accept")
+    notes = Magazines.objects.filter(status="Accept")
 
     d = {'notes':notes}
     return render(request, 'accepted_m.html',d)
@@ -286,7 +286,7 @@ def rejected_m(request):
     if not request.user.is_authenticated:
         return redirect('login_admin')
 
-    notes = Notes.objects.filter(status="Reject")
+    notes = Magazines.objects.filter(status="Reject")
 
     d = {'notes':notes}
     return render(request, 'rejected_m.html',d)
@@ -296,7 +296,7 @@ def all_m(request):
     if not request.user.is_authenticated:
         return redirect('login_admin')
 
-    notes = Notes.objects.all()
+    notes = Magazines.objects.all()
 
     d = {'notes':notes}
     return render(request, 'all_m.html',d)
@@ -305,7 +305,7 @@ def all_m(request):
 def assignstatus_m(request,pid):
     if not request.user.is_staff:
         return redirect('login_admin')
-    notes = Notes.objects.get(id=pid)
+    notes = Magazines.objects.get(id=pid)
     error = ""
     if request.method == 'POST':
         s = request.POST['status']
@@ -322,6 +322,35 @@ def assignstatus_m(request,pid):
 def delete_m(request,pid):
     if not request.user.is_staff:
         return redirect('login')
-    notes = Notes.objects.get(id=pid)
+    notes = Magazines.objects.get(id=pid)
     notes.delete()
     return redirect('all_notes')
+
+@login_required
+def upload_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    error = ""
+    if request.method == 'POST':
+        n = request.FILES['magazinefile']
+        f = request.POST['magazinetype']
+        d = request.POST['description']
+        u = User.objects.filter(username=request.user.username).first()
+        try:
+            Notes.objects.create(user=u,uploadingdate=date.today(),reportfile=n,filetype=f,description=d,status="pending")
+
+            error="no"
+        except:
+            error="yes"
+    d={'error':error}
+    return render(request, 'upload_m.html')
+
+@login_required
+def view_m(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    user = User.objects.get(id=request.user.id)
+    notes = Magazines.objects.filter(status="Accept")
+
+    d = {'notes':notes}
+    return render(request, 'view_m.html',d)

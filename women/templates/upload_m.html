@@ -11,9 +11,9 @@
 </style>
 
 <div class="container mt-5">
-    <h2 class="doabout text-center"></i><b>UPLOAD QUERIES</b></h2>
+    <h2 class="doabout text-center"></i><b>UPLOAD MAGAZINES</b></h2>
     <hr>
-    <p class="text-center"><b>Women can upload any query and they would be answered</b>
+    <p class="text-center"><b>Women can upload their recommended magazines</b>
         <hr><hr><br>
     </p>
     <div class="row">
@@ -26,16 +26,16 @@
 
                 </div>
                 <div class="form-group">
-                    <label>Name:</label>
+                    <label>Title:</label>
                     <input type="text" class="form-control" placeholder="Enter name" name="fname">
                 </div>
                  <div class="form-group">
-                    <label>Reports:</label>
-                    <input type="file" class="form-control" name="notesfile">
+                    <label>Upload Recommended Magazines:</label>
+                    <input type="file" class="form-control" name="magazinesfile">
                  </div>
                 <div class="form-group">
                   <label>File Type:</label>
-                  <select class = "form-control" name="filetype">
+                  <select class = "form-control" name="magazinetype">
                         <option value="">---Select filetype---</option>
                         <option value="five">PDF</option>
                         <option value="six">PPT</option>
@@ -50,13 +50,13 @@
                   <input type="text" class="form-control" name="description">
                 </div>
 
-                <button type="submit" class="bb btn btn-warning">ASK</button><hr><hr>
+                <button type="submit" class="bb btn btn-warning">Submit</button><hr><hr>
               </form>
 
         </div>
 
-        <div class="col-sm-6">
-            <img src="{% static 'images/query.jpg' %}"  class="img-thumbnail" style="width:110%">
+        <div class="col-sm-3">
+            <img src="{% static 'images/magazine1.jpg' %}"  class="img-thumbnail" style="width:110%">
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
 
 {% ifequal error "no" %}
 <script>
-    alert('Notes uploaded Successfully');
+    alert('Magazine uploaded Successfully');
     // window.location=("{% url 'login' %}");
 </script>
 {% endifequal %}

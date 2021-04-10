@@ -22,3 +22,15 @@ class Notes(models.Model):
 
     def __str__(self):
         return self.signup.user.username+" "+self.status
+
+
+class Magazines(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    uploadedate = models.CharField(max_length=10,null=True)
+    magazinefile = models.FileField(null=True)
+    magazinetype = models.CharField(max_length=30,null=True)
+    description = models.CharField(max_length=300,null=True)
+    status = models.CharField(max_length=30,null=True)
+
+    def __str__(self):
+        return self.signup.user.username+" "+self.status
