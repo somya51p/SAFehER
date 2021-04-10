@@ -162,6 +162,10 @@ def vaccine(request):
 @login_required
 def magazine(request):
     return render(request, 'magazine.html')
+    
+@login_required
+def helpline(request):
+    return render(request, 'helpline.html')
 
 @login_required
 def upload_queries(request):
