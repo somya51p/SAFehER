@@ -164,6 +164,10 @@ def magazine(request):
     return render(request, 'magazine.html')
 
 @login_required
+def ngos(request):
+    return render(request, 'ngos.html')
+
+@login_required
 def helpline(request):
     return render(request, 'helpline.html')
 

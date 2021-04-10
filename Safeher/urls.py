@@ -38,6 +38,7 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('vaccine/', vaccine, name='vaccine'),
     path('magazine/', magazine, name='magazine'),
+    path('ngos/', ngos, name='ngos'),
     path('login_admin/', login_admin, name='login_admin'),
     path('admin_home/', admin_home, name='admin_home'),
     path('pending_queries/', pending_queries, name='pending_queries'),

@@ -1,0 +1,186 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+
+
+{% block body %}
+<style>body {
+    background:#FAFAFA;
+  }
+
+.header{
+ /* background:#e9e9e9; */
+ width:100%;
+ height: 30%;
+ padding:1rem;
+}
+
+.header_img{
+  min-width: 60%;
+  height: 25rem;
+}
+
+.wb-stl-heading1 {
+            text-align: center;
+            font-size: 4rem;
+            font-family: 'Roboto Slab', serif;
+        }
+.woman_icon{
+    margin-top:0px;
+}
+.content{
+
+  background:#ffffff;
+ margin:auto;
+  min-width: 10%;
+  max-width: 60%;
+padding:1rem;
+}
+.ngo_heading{
+    text-align:center;
+    margin:20px 0;
+    font-weight: 800;
+    font-size:2rem;
+}
+.content button{
+  display: inline;
+  background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+  color: #ffffff;
+  border:0 black solid;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.4rem;
+  margin:2% 3%;
+}
+.content button:hover{
+  transition: 0.3s;
+  opacity: 0.85;
+  cursor:pointer;
+}
+.helpline{
+    margin-top: 3rem;
+    padding: 10px;
+    min-width:6rem;
+    width:25%;
+    display: inline;
+    background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+    color: #ffffff;
+    border:0 black solid;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.4rem;
+}
+
+.helpline:hover{
+  transition: 0.3s;
+  opacity: 0.85;
+  cursor:pointer;
+}
+a{
+    text-decoration: none;
+}
+  </style>
+
+  <div class="container">
+      <center>
+        <a href="{% url 'helpline' %}" target=""><button class="helpline"><span class="fa fa-phone fa-lg"></span><b>Helpline Numbers</b></button></a>
+      </center>
+  </div><br>
+
+<div class="header"id="header">
+
+    <center><img class="header_img" src="{% static 'images/ngo.jpeg' %}">
+    </center></div>
+
+    <h1 class="wb-stl-heading1">
+
+        <strong style="text-shadow: 2px 2px grey; text-align: center; ">
+            <font color="black">NGOs for Women</font>
+        </strong>
+        <img class="woman_icon" src="{% static 'images/womenicon.jpeg' %}" alt="woman" height="85vw">
+    </h1>
+
+    <div class="content"> <div class="ngo">
+        <h2 class="ngo_heading">1. Gauri India</h2>
+        <p>Pioneered in the year 1993 by Ajeet Singh, Guria, a 36 member NGO in India, works towards fighting the sexual exploitation of women & children, especially forced prostitution & sex trafficking which has further become severe and complex due to sex tourism and spread of HIV/AIDS. The blue print of the foundation was laid out way back in 1988 when Mr. Singh adopted three children of a woman from a red light area.
+        </p><center>
+    <a href="tel:+915422504253" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:guria.freedomnow@gmail.com" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="http://guriaindia.org/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+
+    <div class="ngo">
+        <h2 class="ngo_heading">2. ActionAid Association</h2>
+        <p>ActionAid Association is an organisation working for social and ecological justice. ActionAid has been engaged with the most marginalised communities in India since 1972.
+            In 2006, ActionAid Association was registered as an Indian organisation, governed by an independent General Assembly and a Governing Board. Together with supporters,
+            communities, institutions and governments, we strive for equality, fraternity and liberty for all. ActionAid Association works in 24 states and two union territories, with several partners and allied organisations.
+            ActionAid Association is part of a global federation and a full affiliate of ActionAid International, that has presence in over 40 countries worldwide.
+        </p><center>
+    <a href="tel:+918025586293" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:fundindia@actionaid.org" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="https://www.actionaidindia.org/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+
+    <div class="ngo">
+        <h2 class="ngo_heading">3. Majlis Legal Center </h2>
+        <p>The founder members of Majlis have been a part of the women’s movement in India since 1980. Majlis started in 1991 as a response to a growing need for lawyers with a gender perspective
+        who are dedicated to evolving innovative legal practices to defend women’s rights. Headed by Adv. Flavia Agnes we are an all women team comprising of lawyers and social activists. Our agenda for
+        social change is – quality legal representation for individual women in court, changing mindsets through advocacy and training and evolving gender just ideology through campaigns and interventions.
+        </p><center>
+    <a href="tel:+912226662394" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:majlislaw@gmail.com" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="http://majlislaw.com/en/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+    <div class="ngo">
+        <h2 class="ngo_heading">4. Prajwala </h2>
+        <p>Prajwala is a pioneering anti-trafficking organization working on the issue of sex trafficking and sex crime.
+        Established in the year 1996 in South India, Prajwala has pan India and International operations. Prajwala works on the five pillars
+        of Prevention, Protection, Rescue, Rehabilitation & Reintegration. As one of the most powerful voices advocating nationally and globally for
+        victim centred services, Prajwala in its 25 years of existence has assisted the police in rescuing over 24,000 women and girls from sex slavery and facilitating their journey for recovery.</p>
+        <center>
+    <a href="tel:+918414237304" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:praj_2010@yahoo.com" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="https://www.prajwalaindia.com/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+    <div class="ngo">
+        <h2 class="ngo_heading">5. NARII Foundation<br>
+            (New Age Revolution In India Foundation) </h2>
+        <p>NARII Foundation, established in the year 2016 is a non-government organisation catering to the welfare of women and not-so-privileged
+             girl child. Since inception, NARII is working seamlessly towards the improved quality of life, health, education, women empowerment
+            and mankind at large. NARII works towards establishing a connection between the different monetary and social dimensions of the
+            society in order to provide a powerful force making an impact to the society with peace, healing, smiles and a positive shift in
+            the cultural dimensions. </p>
+    <center>
+    <a href="tel:+911126397166" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:nariifoundation@gmail.com" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="http://nariifoundation.com/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+    <div class="ngo">
+        <h2 class="ngo_heading">6. CARE India <br>(An NGO Empowering Women & Girls)</h2>
+        <p>CARE has been working in India for 70 years, focusing on alleviating poverty and social exclusion. We do this through well-planned
+            and comprehensive programmes in health, education, livelihoods and disaster preparedness and response. CARE India is collaborating
+            with development partners in fighting COVID-19 health crisis. We are helping frontline workers stay safe with PPE, distributing
+            dry rations to feed the needy, raising awareness in our programme areas. We are part of the CARE International Confederation working
+            in over 100 countries for a world where all people live with dignity and security. CARE India offices are present across different
+            states in India including Rajasthan, Uttar Pradesh, Delhi, Madhya Pradesh, Orissa, Gujrat, etc.</p>
+
+        <center>
+    <a href="tel:+911204048250" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:cbox-ap@careindia.org" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="https://www.careindia.org/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+    <div class="ngo">
+        <h2 class="ngo_heading">8. Gramya Resource Center for Women </h2>
+        <p>Gramya's vision is to create a society, which will provide political, social and economic opportunities for women, especially tribal and dalit women, to help them achieve their rights, to improve their lives and livelihoods and to realize their full potential. Issues that they focus on are -
+            <ol>
+                <li>Securing the rights of women and girls, especially to confront violence through organizing and capacity building</li>
+                <li>Eradication of female infanticide and sale of girl babies</li>
+                <li>Access to credit through self-help initiatives</li>
+                <li>Improvement of livelihoods for women and their families</li>
+                <li>Strengthening healthcare systems to ensure women's reproductive rights</li>
+            </ol>
+        </p><center>
+    <a href="tel:+919440860271" target=""><button><span class="fa fa-phone fa-lg"></span><b> Contact</b></button></a>
+    <a href="mailto:vijayrukminirao@gmail.com" target="_blank"><button><span class="fa fa-envelope-o fa-lg"></span><b> Email</b></button></a>
+    <a href="http://gramya.org.in/" target="_blank"><button><span class="fa fa-external-link fa-lg"></span><b> Website</b></button></a></center> <hr> </div>
+
+
+</div>
+{% endblock %}
