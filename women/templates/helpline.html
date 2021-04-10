@@ -3,16 +3,17 @@
 {% block body %}
 <style>
 .header{
- background:#e9e9e9;
+
  width:100%;
  height: 25%;
  padding:1rem;
-   
+
 }
 
 .header_img{
-  min-width: 60%;
-  height: 22rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
 
 .call_icon{
@@ -24,23 +25,24 @@
     width:100%;
 }
 .helpline tr:nth-child(even){
-    background-color: #e0dddd9d;
+
+    background-color: white;
 }
 .helpline tr:nth-child(odd){
-    background-color: white;
+    background: linear-gradient(to right top, rgba(229, 231, 178, 0.767), rgba(178, 233, 106, 0.7), rgba(221, 139, 191, 0.7));
 }
 .helpline td{
     padding:2rem 3rem;
     font-weight: bolder;
     font-size: 1.5rem;
-    
+
 }
 </style>
 <div class="header"id="header">
     <center><img class="header_img" src="{% static 'images/helpline.jpg' %}"></center>
 </div>
 
-<div class="helpline_table">
+<div class="container helpline_table">
     <table class="helpline" border="0rem">
         <tr><td>Women Helpline- ALL INDIA</td><td>1091 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
         <tr><td>Women Helpline- DOMESTIC ABUSE</td><td>181 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>

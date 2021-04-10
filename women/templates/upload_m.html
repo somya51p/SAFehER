@@ -1,0 +1,78 @@
+{% extends 'user_nav.html' %}
+
+{% load static %}
+{% block body %}
+
+<style>
+    .doabout{
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>UPLOAD QUERIES</b></h2>
+    <hr>
+    <p class="text-center"><b>Women can upload any query and they would be answered</b>
+        <hr><hr><br>
+    </p>
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+
+                </div>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter name" name="fname">
+                </div>
+                 <div class="form-group">
+                    <label>Reports:</label>
+                    <input type="file" class="form-control" name="notesfile">
+                 </div>
+                <div class="form-group">
+                  <label>File Type:</label>
+                  <select class = "form-control" name="filetype">
+                        <option value="">---Select filetype---</option>
+                        <option value="five">PDF</option>
+                        <option value="six">PPT</option>
+                        <option value="six">DOCX</option>
+                        <option value="six">TEXT</option>
+                        <option value="six">IMAGE</option>
+                        <option value="six">ZIP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label>Description:</label>
+                  <input type="text" class="form-control" name="description">
+                </div>
+
+                <button type="submit" class="bb btn btn-warning">ASK</button><hr><hr>
+              </form>
+
+        </div>
+
+        <div class="col-sm-6">
+            <img src="{% static 'images/query.jpg' %}"  class="img-thumbnail" style="width:110%">
+        </div>
+    </div>
+</div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Notes uploaded Successfully');
+    // window.location=("{% url 'login' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went Wrong, Try again');
+</script>
+{% endifequal %}
+
+{% endblock %}
