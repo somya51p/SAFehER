@@ -1,1 +1,67 @@
-<h1>SOMYAAAAAAAA</h1>
+{% extends 'admin_nav.html' %}
+
+{% load static %}
+{% block body %}
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"> -->
+
+<style>
+    .doabout{
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+<center>
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>VIEW REJECTED QUERIES</b></h2>
+    <hr>
+    <table class="table table=bordered" id="example">
+        <thead>
+            <tr>
+                <th>Sr.no.</th>
+                <th>Uploading date</th>
+                <th>Uploaded by</th>
+                <!-- <th>Class</th>
+                <th>Download notes</th> -->
+                <th>Open magazine</th>
+                <th>Status</th>
+                <!-- <th>Description</th> -->
+                <th>Assign</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in notes %}
+            <tr>
+                <th>{{ forloop.counter }}</th>
+                <th>{{ i.uploadedate }}</th>
+                <th>{{ i.user.username }}</th>
+                <!-- <th>{{ i.branch }}</th>
+                <th><a href="{{ i.notesfile.url }}" class="btn btn-warning" download>Download</a></th> -->
+                <th><a href="{{ i.magazinesfile.url }}" class="bbb btn btn-warning">Open magazine</a></th>
+                <th>{{ i.status }}</th>
+                <!-- <th>{{ i.description }}</th> -->
+                <th><a href="{% url 'assign_status' i.id %}" class="bbb btn btn-warning" >Assign status</a></th>
+                <th><a href="{% url 'delete_m' i.id %}" class="btn btn-danger" onclick="return confirm('Do you really want to delete magazine?')">Delete</a></th>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+</center>
+{% endblock %}
+

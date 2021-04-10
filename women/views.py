@@ -332,8 +332,8 @@ def upload_m(request):
         return redirect('login')
     error = ""
     if request.method == 'POST':
-        n = request.FILES['magazinefile']
-        f = request.POST['magazinetype']
+        n = request.FILES['magazinesfile']
+        f = request.POST['magazinestype']
         d = request.POST['description']
         u = User.objects.filter(username=request.user.username).first()
         try:
