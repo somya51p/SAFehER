@@ -52,4 +52,6 @@ urlpatterns = [
     path('delete_user/<int:pid>', delete_user, name='delete_user'),
     path('delete_notes/<int:pid>', delete_notes, name='delete_notes'),
     path('delete_m/<int:pid>', delete_m, name='delete_m'),
+    path('chat/', include('chat.urls')),
+
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
