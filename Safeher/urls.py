@@ -33,6 +33,7 @@ urlpatterns = [
     path('bmi/', bmi, name='bmi'),
     path('browse/', browse, name='browse'),
     path('helpline/', helpline, name='helpline'),
+    path('ngo/', ngo, name='ngo'),
     path('information/', information, name='information'),
     path('upload_queries/', upload_queries, name='upload_queries'),
     path('faq/', faq, name='faq'),

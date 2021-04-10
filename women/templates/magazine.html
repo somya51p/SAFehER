@@ -27,183 +27,68 @@
     font-family: 'Nunito',
         sans-serif;
 }
-.gridViewContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.gridViewItem {
-    display: inline-block;
-    margin: 5px 15px;
-    width: 30%;
-    max-width: 215px;
-    min-width: 150px;
-    margin-bottom: 20px;
+
+
+
+
+
+
+.magazine_table td img {
     border-radius: 3px;
-    overflow: wrap;
-    flex-wrap: wrap;
-   
-}
-
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-
-
-.gridViewItem img {
-    width: 100%;
-    border-radius: 3px;
+    height:300px;
     transition: all .4s ease-out;
+    margin-bottom: 10px;
 }
 
-.gridViewItem img:hover {
-    filter: url(#spring-grass);
+.magazine_table td img:hover {
     box-shadow: 0 3px 6px rgba(80, 77, 77, 0.459);
     opacity:0.6;
 }
 
-.gridViewInfo {
-    font-weight: 300;
-    text-align: center;
-    padding: 10px 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: wrap;
+.magazine_table{
+    width:100%;
+    margin:auto;
+}
+.magazine_table tr{
+    margin:2rem;
 }
 
-.gridViewItem a {
-    text-decoration: none;
-}
-.magazine_img{
-    height:300px;
-}
-.gridViewItem p{
-    font-size: 1.4rem;
+.magazine_table td{
+    padding:2rem 5rem;
+    font-size: 1.5rem;
     font-weight:900;
+
 }
+
 </style>
 
 <h1 class="pageHeadingBig">You Might Also View</h1>
 
-<div class="gridViewContainer">
-   <div class='gridViewItem'>
-					
-					<a href='https://freeforbook.com/shop/professional-beauty-september-2020/'>	<img class="magazine_img" src="{% static 'images/magazine1.jpg' %}"></a>
-
-    <div class='gridViewInfo'>
-			<p>Professional Beauty September 2020</p>
-
-            </div>
-					
-
-			</div>
-                
-	<div class='gridViewItem'>
-					
-        <a href='https://freeforbook.com/shop/simply-beautiful-gardens-december-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine2.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-<p>Simply Beautiful Gardens</p>
-
+<div class="magazine">
+    <table class="magazine_table" border="0rem">
+        <tr><td><a href='https://freeforbook.com/shop/professional-beauty-september-2020/'><img class="magazine_img" src="{% static 'images/magazine1.jpg' %}"></a>
+            <br>Professional Beauty September 2020</td>
+            <td><a href='https://freeforbook.com/shop/simply-beautiful-gardens-december-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine2.jpg' %}"></a>
+            <br>Simply Beautiful Gardens</td>
+            <td><a href='https://freeforbook.com/shop/crafts-beautiful-january-2021/'>	<img  class="magazine_img" src="{% static 'images/magazine3.jpg' %}"></a>
+            <br>Crafts Beautiful</td>
+        </tr>
+        <tr><td><a href='https://freeforbook.com/shop/hair-june-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine4.jpg' %}"></a>
+            <br>Hair Journal 2020</td>
+            <td><a href='https://freeforbook.com/shop/hairdressers-journal-january-2021/'>	<img class="magazine_img" src="{% static 'images/magazine 6.jpg' %}"></a>
+            <br>Hairdressers Journal – January 2021</td>
+            <td><a href='https://freeforbook.com/shop/today-s-dietitian-june-july-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine5.jpg' %}"></a>
+            <br>Today’s Dietitian – June-July 2020</td>
+        </tr>
+        <tr><td><a href='https://freeforbook.com/shop/landscape-architecture-magazine-usa-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine7.jpg' %}"></a>
+            <br>Landscape Architecture Magazine USA – March 2021</td>
+           <td><a href='https://freeforbook.com/shop/astronomy-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine8.jpg' %}"></a>
+            <br>Astronomy – March 2021</td>
+            <td><a href='https://freeforbook.com/shop/vegan-life-february-2021/'>	<img class="magazine_img" src="{% static 'images/magazine9.jpg' %}"></a>
+            <br>Vegan Life – February 2021</td>
+        </tr>
+            
+    </table>
 </div>
-        
-
-    </div>
-    
-	<div class='gridViewItem'>
-					
-        <a href='https://freeforbook.com/shop/crafts-beautiful-january-2021/'>	<img  class="magazine_img" src="{% static 'images/magazine3.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-<p>Crafts Beautiful </p>
-
-</div>
-        
-
-    </div>
-    
-	<div class='gridViewItem'>
-					
-        <a href='https://freeforbook.com/shop/hair-june-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine4.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-<p>Hair Journal 2020</p>
-
-</div>
-        
-
-    </div>
-    
-	<div class='gridViewItem'>
-					
-        <a href='https://freeforbook.com/shop/today-s-dietitian-june-july-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine5.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-<p>Today’s Dietitian – June-July 2020</p>
-
-</div>
-        
-
-    </div>
-    
-	<div class='gridViewItem'>
-					
-        <a href='https://freeforbook.com/shop/hairdressers-journal-january-2021/'>	<img class="magazine_img" src="{% static 'images/magazine 6.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-<p>Hairdressers Journal – January 2021</p>
-
-</div>
-        
-
-    </div>
-	<div class='gridViewItem'>
-					
-					<a href='https://freeforbook.com/shop/landscape-architecture-magazine-usa-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine7.jpg' %}"></a>
-
-    <div class='gridViewInfo'>
-			<p>Landscape Architecture Magazine USA – March 2021</p>
-
-            </div>
-					
-
-				</div>
-                <div class='gridViewItem'>
-					
-					<a href='https://freeforbook.com/shop/astronomy-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine8.jpg' %}"></a>
-
-    <div class='gridViewInfo'>
-			<p>Astronomy – March 2021</p>
-
-            </div>
-					
-
-				</div>
-                <div class='gridViewItem'>
-					
-					<a href='https://freeforbook.com/shop/vegan-life-february-2021/'>	<img class="magazine_img" src="{% static 'images/magazine9.jpg' %}"></a>
-
-    <div class='gridViewInfo'>
-			<p>Vegan Life – February 2021</p>
-
-            </div>
-			</div>
-
-            <div class='gridViewItem'>
-					
-                <a href='https://freeforbook.com/shop/android-advisor-february-2021/'>	<img class="magazine_img" src="{% static 'images/magazine10.jpg' %}"></a>
-
-<div class='gridViewInfo'>
-        <p>Android Advisor – February 2021</p>
-
-        </div>
-        </div>
-
-
-	
-
-
-	
-</div>
-
 {% endblock %}
