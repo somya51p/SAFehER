@@ -1,0 +1,475 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+{% block body %}
+<style>body {
+  font-family: "Lato", sans-serif;
+  background:#FAFAFA;
+}
+
+.header{
+ background:#e9e9e9;
+ width:100%;
+ height: 30%;
+ padding:1rem;
+ margin-bottom:1.5rem;  
+}
+
+.header_img{
+  min-width: 60%;
+  height: 25rem;
+}
+
+.navheader{
+  background:linear-gradient(315deg, #6a0700 0%, #d9938e 74%);
+  height: 100%;
+  padding:1.3rem;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom:0.5rem;
+}
+
+hr{
+  margin:0 0.5rem;
+  padding:0rem;
+}
+
+.sidenav {
+  padding:0px;
+  height: 100%;
+  width: 18rem;
+  z-index: 1;
+  border:1.5px rgb(95, 93, 93) solid;
+  border-radius: 5px;
+  overflow-x: hidden;
+  transition: 0.5s;
+  margin-left: 4rem;
+}
+
+.sidenav a {
+
+  padding:1rem;
+  background-image: linear-gradient(to right top, #05d5d9, #6517cb, #cb218d);
+  -webkit-background-clip: text;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: transparent;
+  display: block;
+  transition: 0.3s;
+}
+
+.list:hover {
+  background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+  color: #ffffff;
+}
+.list a:hover{
+  color: #ffffff;
+}
+.list a:visited{
+  background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+  color: #ffffff;
+}
+.flexbox{
+  padding:1rem;
+}
+.flex-item-left {
+  background:#ffffff;
+ min-width: 10%;
+  max-width: 25%;
+    float: left;
+
+}
+
+.flex-item-right {
+  background:#ffffff;
+ margin-left:3rem;
+  min-width: 10%;
+  max-width: 60%;
+    float: left;
+    padding:1rem;
+
+ 
+}
+.intro{
+  font-size: 1.3rem;
+}
+.months {
+  opacity: 0;
+  transition: opacity .5s .25s ease-out;
+}
+.months h1{
+  font-size: 1.5rem;
+}
+.months p{
+  font-size:1.1rem;
+}
+.months ul{
+  font-size:1rem;
+}
+
+.months.is-visible {
+  opacity: 1;
+  transform: translateY(50px);
+}
+
+.months_img{
+  width:80%;
+  height:8rem;
+}
+.months hr{
+  margin:1rem 0 3rem 0;
+}
+.months a{
+  display: inline-block;
+  text-decoration: none;
+  background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.4rem;
+  margin:2% 3%;
+  
+}
+.months a:hover{
+  transition: 0.3s;
+  opacity: 0.85;
+  cursor:pointer;
+}
+.months button{
+  display: inline;
+  background-image: linear-gradient(to right top, #40c6c9, #2e70c7, #20397c);
+  color: #ffffff;
+  border:0 black solid;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.4rem;
+  margin:2% 3%;
+}
+.months button:hover{
+  transition: 0.3s;
+  opacity: 0.85;
+  cursor:pointer;
+}
+.months .prenatal {
+  display:none;
+}
+.months .prenatal li {
+  font-size: 1.1rem;
+}
+.months .visible{
+  display:block;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body>
+  <div class="header"id="header">
+    <center><img class="header_img" src="{% static 'images/Women.jpg' %}"></center>
+    
+  </div>
+  <div class="flexbox">
+    <div id="index" class="sidenav flex-item-left">
+      <div class="navheader">Pregnancy Month By Month</div>
+      <div class="list"><a href="#month_1">First Month</a><hr></div>
+      <div class="list"><a href="#month_2">Second Month</a><hr></div>
+      <div class="list"><a href="#month_3">Third Month</a><hr></div>
+      <div class="list"><a href="#month_4">Fourth Month</a><hr></div>
+      <div class="list"><a href="#month_5">Fifth Month</a><hr></div>
+      <div class="list"><a href="#month_6">Sixth Month</a><hr></div>
+      <div class="list"><a href="#month_7">Seventh Month</a><hr></div>
+      <div class="list"><a href="#month_8">Eighth Month</a><hr></div>
+      <div class="list"><a href="#month_9">Ninth Month</a></div>
+    </div>
+
+    <div class="main_content flex-item-right">
+      <div class="intro">
+        <p>Pregnancy is divided into 3 trimesters.
+        The word trimester means "3 months." This can be confusing, because a normal pregnancy is 40 weeks,
+        a bit longer than 9 months. The first trimester takes place from conception through week 14. The 
+        second trimester is from week 14 through week 28. And the third trimester is from week 28 through
+        labor and delivery.<br> Of course, delivery varies a lot, but it averages at week 40.</p><br> <hr>
+      </div>
+      
+
+      <div class="months show-on-scroll" id="month_1">
+        <img class="months_img" src="{% static 'images/month_1.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li><b>Nausea</b> – the earliest signs of "morning sicknes" can appear in the first month.</li>
+          <li> <b>Breast Tenderness</b> – your breasts or nipples may be swollen and tender to the touch.</li>
+          <li><b>Fatigue</b> – you may feel tired as your body adjusts to hormonal changes.</li>
+          <li><b> Frequent Urination</b> – a common side effect of the production of human chorionic gonadotropin (hCG) which causes an increased need to urinate in early pregnancy.</li>
+          <li><b>Food Sensitivity</b> – just the smell of food may turn your stomach.</li>
+        </ul> 
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is only .1 to .2 millimeters and at this stage is called a blastocyst. At three weeks pregnant, your child has already developed all his genetic material – and the sex is already decided.</p>
+        <button onclick="display('prenatal_1')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> 
+        <div id="prenatal_1" class="prenatal">
+          <ul>
+            <li>A pregnancy test to confirm the pregnancy.</li>
+            <li>You'll complete an extensive family medical history.</li>  
+            <li>The doctor usually performs an internal pelvic exam to check your uterus, vagina, and cervix.</li>  
+            <li>A Pap smear, if you haven’t had one in the past year.</li>  
+            <li>Routine blood tests and urine tests may be performed.</li>  
+            <li>An assessment of your health, including height, weight and blood pressure.</li>  
+            <li>You will be prescribed a prenatal vitamin and folic acid.</li>  
+            <li>Consult with your doctor about any over-the-counter or prescription drugs you take.</li>      
+          </ul>
+        </div>
+        <hr>
+      </div>
+
+
+      <div class="months show-on-scroll" id="month_2">
+        <img class="months_img" src="{% static 'images/month_2.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>Nausea, vomiting, food sensitivity and fatigue may develop or become more severe.</li>
+          <li>If you haven't already, you should make changes in your lifestyle so you and your baby will be healthy. You should stop smoking, drinking and using caffeine. Consult your caregiver about other changes you may need to make.</li>
+          <li>You may experience moodiness as hormone levels adjust.</li>
+          <li>Sexual desire may wan as fatigue and nausea increase.</li>
+        </ul> 
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is now a little under an inch long but has developed into a tiny human being. The heart is beating, the brain is developing and she has developed all her limbs as well as hands and feet. The eyes have not fully developed.</p>
+        <button onclick="display('prenatal_2')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button><a href="#index">BACK TO INDEX</a>
+        <div id="prenatal_2" class="prenatal">
+          <ul>
+            <li>If this is your first visit, you will receive an internal pelvic exam and Pap smear.</li>
+            <li>Weight gain and blood pressure will be measured and monitored.</li>
+            <li>Urine will be tested for possible infection.</li>
+            <li>Blood may be drawn to test for anemia and HIV. Genetic testing may also be given if appropriate. </li>    
+          </ul>
+        </div>
+        <hr>
+      </div> 
+
+  
+      <div class="months show-on-scroll" id="month_3">
+        <img class="months_img" src="{% static 'images/month_3.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>Nausea may decrease as your body adjusts to hormone levels.</li>
+          <li> Your middle may widen, as the uterus grows to the size of a grapefruit.</li>
+          <li> As you feel better, develop an exercise plan to increase strength and flexibility, which will help during labor.</li>
+          <li> Moodiness and food aversions may continue but usually subside by the end of the trimester.</li>
+          <li>You may experience your first food cravings as appetite returns.</li>
+        </ul> 
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is now officially a <b>foetus</b> and is between two and four inches long. By the end of the first trimester, all organs are present, and even fingernails are developing.
+          Your baby is also moving her arms and legs, though you won't feel it yet. The rate of miscarriage drops at this point.</p>
+          <button onclick="display('prenatal_3')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+          <div id="prenatal_3" class="prenatal">
+            <ul>
+              <li>You will be able to hear your baby’s heartbeat.</li>
+              <li>Chorionic villus sampling (CVS), which can detect Tay-Sachs, sickle cell anemia, Down syndrome, and other genetic defects, is usually scheduled between ten and twelve weeks if desired.</li>
+              <li>Weight, blood pressure and other monitoring will continue. </li>    
+            </ul>
+          </div>
+        <hr> 
+      </div> 
+
+
+      <div class="months show-on-scroll" id="month_4">
+        <img class="months_img" src="{% static 'images/month_4.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>By the end of this month, you may feel "quickening" – the first flutters of baby movement often described as "butterflies" or "bubbles".</li>
+          <li>You may find yourself feeling better. Nausea usually subsides and energy increases.</li>
+          <li> Hormones stabilize, and you feel less moody. Your sex drive may also return. Enjoy this time!
+          <li> You may develop heartburn as your uterus rises in the abdomen.
+          <li> Outward signs of pregnancy may begin to appear.
+          <li> Most moms-to-be start shopping for their pregnancy wardrobe at this point.</li>
+          <li> Now is a good time to sign up for prenatal classes.</li>
+        </ul> 
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is five to six inches long and weighs up to four ounces. Baby's face and heart are fully formed at this point, though the lungs are still developing.
+        Baby's eyes will open during this month and he or she will begin feeling the urge to suck.
+        </p>
+        <button onclick="display('prenatal_4')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+        <div id="prenatal_4" class="prenatal">
+          <ul>
+            <li>Much like last month’s visit, monitoring of fetal heartbeat and size, as well as your own weight and blood pressure, will continue.</li> 
+            <li>As it is every month, your urine will be tested for sugar and protein.</li> 
+            <li>An ultrasound is usually performed to check for fetal age.</li> 
+            <li>The alpha-fetoprotein (AFP) test for neural defects is given in week 16.</li> 
+            <li>Amniocentesis test for abnormal chromosomes may be offered.</li>    
+          </ul>
+        </div>
+        <hr>
+      </div>
+
+
+      <div class="months show-on-scroll" id="month_5">
+        <img class="months_img" src="{% static 'images/month_5.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>Most women gain between 5 to 15 pounds by this time.</li>
+          <li> Your uterus is now the size of a cantaloupe.</li>
+          <li> Appetite often increases.</li>
+          <li> Fatigue may return, as you're carrying extra weight and your heart is pumping more blood.</li>
+          <li> Some women experience bloating, constipation or other uncomfortable symptoms. Talk to your doctor if you have any concerns.</li>
+          <li> Some women experience forgetfulness, sometimes called "pregnancy brain".</li>
+          <li>Your belly button may pop out.</li>
+        </ul> 
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is now about 10 ounces and six to nine inches long. Baby is covered with a fine protective hair. This month he or she will develop fingerprints and permanent teeth buds behind fully formed baby teeth.
+        Little girls' ovaries also develop at this time, and sex may be determined through ultrasound. 
+        </p>
+        <button onclick="display('prenatal_5')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+        <div id="prenatal_5" class="prenatal">
+          <ul>
+            <li>Monitoring of baby’s growth and heartbeat continues.</li>
+            <li>Your weight, urine and blood pressure will also be checked.</li>
+            <li>At this point, an ultrasound may reveal the baby’s sex. This “second scan” may also show any anomaly.</li>    
+          </ul>
+        </div>
+        <hr>
+      </div> 
+
+
+      <div class="months show-on-scroll" id="month_6">
+        <img class="months_img" src="{% static 'images/month_6.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>Your uterus is now the size of a basketball resting above your belly button. The skin on the stomach may feel itchy as it stretches around your growing womb.
+          <li>Complaints of mid-pregnancy, including bleeding gums, constipation, heartburn and leg cramps, may intensify at this time.</li>
+          <li>You'll gain about a pound a week at this time. The increased weight may result in varicose veins or hemorrhoids. Talk to your doctor if you notice protruding veins in any area.</li>
+          <li>You may become tired more easily – no wonder! Listen to your body and rest as necessary.</li>
+        </ul>
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby is about <b>10 inches long</b> and weighs over a pound. You'll be aware of baby's movements as he or she stretches and hiccups.
+           Baby's eyes now open and close, vocal cords are functioning, and "finishing touches" like eyebrows have formed.</p>
+           <button onclick="display('prenatal_6')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+           <div id="prenatal_6" class="prenatal">
+            <ul>
+              <li>Monitoring will continue. Pregnancy-induced blood pressure problems (hypertension) often start at this time, so make your caregiver aware of problems with swollen ankles, headaches or nosebleeds.</li>
+              <li>Most women are tested for gestational diabetes at this time.</li>    
+            </ul>
+          </div>
+        <hr>
+     </div>
+
+
+      <div class="months show-on-scroll" id="month_7">
+        <img class="months_img" src="{% static 'images/month_7.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>Your feet or hands may start cramping.</li>  
+          <li>You may experience more movement of your baby.</li>  
+          <li>Your joints may feel looser due to softening in preparation for birth.</li>  
+          <li>Many women experience Braxton Hicks contractions (non-productive contractions) starting in the seventh month.</li>
+        </ul>
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p>Your baby is starting to develop fat under his or her skin. Baby's now almost <b>12 inches long</b> and weighs between two and four pounds.
+         Your child can now see, hear and taste, and the brain and nervous system are growing rapidly
+        </p>
+        <button onclick="display('prenatal_7')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+        <div id="prenatal_7" class="prenatal">
+          <ul>
+            <li>Monitoring of your weight, blood pressure and urine, as well as the baby’s growth and position, will continue.</li>
+            <li>Women who are Rh-negative may receive a shot of Rhogam at this time to prevent complications later.</li>
+            <li>Stretch marks may appear as the skin continues to stretch.</li>
+            <li>You may start seeing your caregiver more frequently at this point. Most start out with checkups every other week once you’re seven months pregnant.</li>
+            <li>Now is the time to talk to your caregiver about your birth vision. Discuss your feelings about pain management, fetal monitoring,
+            episiotomies and breastfeeding at this time. Just remember these plans are just a blueprint, which can be adjusted as necessary during labor and delivery to protect the well being of mom and baby.</li>      
+          </ul>
+        </div>
+        <hr>
+      </div>
+
+
+      <div class="months show-on-scroll" id="month_8">
+        <img class="months_img" src="{% static 'images/month_8.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>You’ll continue to gain about a pound a week.</li>
+          <li>You may feel discomfort as the baby pushes on the rib cage or organs.</li>
+          <li> Pelvic pressure may increase as the baby drops into this area.</li>
+          <li> Indigestion and heartburn may become more intense.</li>
+          <li> Skin continues stretching and stretch marks may appear.</li>
+          <li>Braxton Hicks contractions become more regular.</li>
+        </ul>
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Your baby’s brainwaves resemble those of a newborn by this time. He may be <b>a foot (12 inches) or longer</b> and weigh about five pounds.
+          The lungs and brain are continuing to develop and other body systems are refining to be ready for living outside of you.  
+          Movements may slow as the baby fills more of the uterus and has less room to stretch. By the end of the month, most babies are head down and descending into the pelvic area.
+        </p>
+        <button onclick="display('prenatal_8')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+        <div id="prenatal_8" class="prenatal">
+          <ul>
+            <li>Monitoring of your weight, urine, blood pressure and swelling will continue.</li>
+            <li>Baby’s growth, heartbeat, size, and position will be checked.</li>
+            <li>Some caregivers order a second ultrasound at this time to verify the baby’s size and position.</li>
+            <li>Caregiver visits usually increase from bi-weekly to weekly starting at the 36th week.</li>      
+          </ul>
+        </div>
+        <hr>
+      </div>
+
+
+      <div class="months show-on-scroll" id="month_9">
+        <img class="months_img" src="{% static 'images/month_9.jpg' %}"><h1>CHANGES YOU MAY EXPERIENCE</h1>
+        <ul>
+          <li>You may breathe a little easier as baby settles into the pelvis, giving you more room in the abdominal area. This is known as lightening.</li>
+          <li> Sleep will become more difficult due to your size and any anxiety you may feel about the upcoming birth.</li>
+          <li>Some women experience a "nesting instinct" and feel compelled to ready the home for the baby's arrival.</li>
+          <li>Your weight gain will be as high as it will go – up to 35 pounds is average. Some women start losing a pound or two as labor approaches.</li>
+        </ul>
+        <h1>HOW YOUR BABY IS DEVELOPING</h1>
+        <p> Baby's lungs are maturing, and he or she is shedding the layer of hair that protected him or her in the uterus.
+          Your baby's brain is <b>growing tremendously</b> this last month. Baby measures about 18 to 21 inches long and weighs about six to eight pounds.
+       </p>
+       <button onclick="display('prenatal_9')">WHAT TO EXPECT AT YOUR PRENATAL VISIT THIS MONTH</button> <a href="#index">BACK TO INDEX</a>
+       <div id="prenatal_9" class="prenatal">
+         <ul>
+            <li>All monitoring will continue. You will also receive an internal examination to determine if the cervix has ripened or started to dilate.</li>  
+            <li>Your caregiver may swab your vagina and rectum to test for group b streptococcus infection (group b strep).</li>  
+            <li>You will visit your caregiver weekly for monitoring at this point. Visits may increase if you pass your due date.</li>      
+         </ul>
+       </div>
+        <hr>
+      </div>  
+    </div>
+  </div>
+   
+</body>
+
+<script>
+  var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};   // IE Fallback
+  var elementsToShow = document.querySelectorAll('.show-on-scroll'); 
+
+  function loop() {
+
+    Array.prototype.forEach.call(elementsToShow, function(element){
+      if (isElementInViewport(element)) {
+        element.classList.add('is-visible');
+      } else {
+        element.classList.remove('is-visible');
+      }
+    });
+
+    scroll(loop);
+}
+
+// Call the loop for the first time
+loop();
+
+function isElementInViewport(el) {
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+function display(id) {
+  var element=document.getElementById(id);
+  
+ element.classList.toggle("visible");
+    
+}
+</script>
+{% endblock %}

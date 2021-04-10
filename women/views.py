@@ -152,6 +152,10 @@ def browse(request):
     return render(request, 'browse.html')
 
 @login_required
+def information(request):
+    return render(request, 'information.html')
+
+@login_required
 def vaccine(request):
     return render(request, 'vaccine.html')
 
