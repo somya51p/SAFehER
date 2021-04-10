@@ -1,0 +1,68 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+{% block body %}
+<style>
+.header{
+ background:#e9e9e9;
+ width:100%;
+ height: 25%;
+ padding:1rem;
+   
+}
+
+.header_img{
+  min-width: 60%;
+  height: 22rem;
+}
+
+.call_icon{
+    height:1.5rem;
+    width:1.5rem;
+    margin-left:1rem;
+}
+.helpline{
+    width:100%;
+}
+.helpline tr:nth-child(even){
+    background-color: #e0dddd9d;
+}
+.helpline tr:nth-child(odd){
+    background-color: white;
+}
+.helpline td{
+    padding:2rem 3rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    
+}
+</style>
+<div class="header"id="header">
+    <center><img class="header_img" src="{% static 'images/helpline.jpg' %}"></center>
+</div>
+
+<div class="helpline_table">
+    <table class="helpline" border="0rem">
+        <tr><td>Women Helpline- ALL INDIA</td><td>1091 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>Women Helpline- DOMESTIC ABUSE</td><td>181 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>National Commission for Women(NCW)</td><td>011-26942369<img class="call_icon" src="{% static 'images/calling.png' %}"><br>
+        26944754 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>Delhi Commission for Women</td><td>011-23378044 <img class="call_icon" src="{% static 'images/calling.png' %}"><br>
+        23378317<img class="call_icon" src="{% static 'images/calling.png' %}"> <br>
+        23370597<img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>Outer Delhi Helpline</td><td>011-27034873 <img class="call_icon" src="{% static 'images/calling.png' %}"><br>
+        27034874<img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>Student Child Helpline- ALL INDIA</td><td>1098 <img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+        <tr><td>National Human Right Commission</td><td>011-23385368 <img class="call_icon" src="{% static 'images/calling.png' %}"><br>
+        9810298900<img class="call_icon" src="{% static 'images/calling.png' %}"></td></tr>
+
+    </table>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
