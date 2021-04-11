@@ -30,6 +30,11 @@ Team Name: Pseudo Coders
 Video Link:
 https://youtu.be/S8VGYfEZrXU
 
+*****************************
+
+PPT Link:
+https://drive.google.com/file/d/1EqVD5OBZlHg_rhSgbKWRTnKlAxFoR4sO/view?usp=sharing
+
 ***************************************************************
 # How to Clone this repo
 
