@@ -10,8 +10,6 @@
   A complete website for pregnant women to ensure their safety and good health....
 
 
-## Table of Contents:
-
 ## Technology Stack:
   1) Django
   2) Bootstrap
