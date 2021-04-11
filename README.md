@@ -26,6 +26,10 @@ Team Name: Pseudo Coders
 * [Sakshi Ramwani](https://github.com/SAKSHIRAMWANI)
 * [Srishti Singh](https://github.com/SrishtiSingh2001)
 
+
+Video Link:
+https://youtu.be/S8VGYfEZrXU
+
 ***************************************************************
 # How to Clone this repo
 
