@@ -33,34 +33,34 @@ Team Name: Pseudo Coders
 
 Open gitbash and type the following command:
 
-###### git clone "https://github.com/somya51p/SAFehER/"</b>
+##### git clone "https://github.com/somya51p/SAFehER/"</b>
 
 *************************************************************
-Open Visual Studio code and type the following command in terminal:
+Create virtual environment, Open Visual Studio code and type the following command in terminal:
 
-###### python reqirements.txt
+##### pip install -r reqirements.txt
 
 *************************************************************
 Followed by these commands in terminal itself:
 
-###### python manage.py migrate
+##### python manage.py migrate
 
-###### python manage.py makemigrations women
+##### python manage.py makemigrations women
 
-###### python manage.py migrate
+##### python manage.py migrate
 
 *************************************************************
 
 To run the SAFehER app then type:
 
-###### python manage.py runserver
+##### python manage.py runserver
 
 This would make the app run in the browser..
 **************************************************************
 
 In order to access the django-admin, One must create a superuser so type the following command for the same:
 
-###### python manage.py createsuperuser
+##### python manage.py createsuperuser
 
 Fill the required details and it would be created..
 
