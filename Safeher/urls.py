@@ -19,6 +19,7 @@ from django.urls import include, path
 from women.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -58,5 +59,10 @@ urlpatterns = [
     path('delete_notes/<int:pid>', delete_notes, name='delete_notes'),
     path('delete_m/<int:pid>', delete_m, name='delete_m'),
     path('chat/', include('chat.urls')),
+    #password reset
+    path('password_reset/',auth_views.PasswordResetView.as_view(),name='password_reset'),
+    path('password_reset/done/',auth_views.PasswordResetDoneView.as_view(),name='password_reset_done'),
+    path('reset/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+    path('reset/done/',auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
