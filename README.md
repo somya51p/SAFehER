@@ -32,16 +32,7 @@
   5) CSS
 
 
-## Contributors:
-
-Team Name: Pseudo Coders
-
-* [Somya Prajapati](https://github.com/somya51p)
-* [Sakshi Ramwani](https://github.com/SAKSHIRAMWANI)
-* [Srishti Singh](https://github.com/SrishtiSingh2001)
-
-
-Video Link:
+## Video Link:
 https://youtu.be/S8VGYfEZrXU
 
 *****************************
