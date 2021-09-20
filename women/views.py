@@ -320,7 +320,7 @@ def assignstatus_m(request,pid):
         except:
             error="yes"
     d={'notes':notes,'error':error}
-    return render(request, 'assign_status.html', d)
+    return render(request, 'assignstatus_m.html', d)
 
 @login_required
 def delete_m(request,pid):
@@ -341,7 +341,7 @@ def upload_m(request):
         d = request.POST['description']
         u = User.objects.filter(username=request.user.username).first()
         try:
-            Notes.objects.create(user=u,uploadingdate=date.today(),reportfile=n,filetype=f,description=d,status="pending")
+            Magazines.objects.create(user=u,uploadedate=date.today(),magazinesfile=n,magazinestype=f,description=d,status="pending")
 
             error="no"
         except:

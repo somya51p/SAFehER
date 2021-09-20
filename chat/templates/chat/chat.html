@@ -1,8 +1,9 @@
 {% extends 'chat/index.html' %}
+{% load static %}
 {% block body %}
 <nav class="blue lighten-3">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Chat</a>
+      <a href="{% static 'chat.png' %}" class="brand-logo">Chat</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="">{{ request.user.username }}</a></li>
       </ul>
@@ -15,7 +16,7 @@
             <div class="collection">
                 {% for user in users %}
                 <a href="{% url 'chat' request.user.id user.id %}" id="user{{ user.id }}" class="collection-item row">
-                    <img src="https://frontend-1.adjust.com/new-assets/images/site-images/interface/user.svg" class="col s4">
+                    <img src="{% static 'chat.png' %}" style="width: 16%;" class="col s4">
                     <div class="col s8">
                     <span class="title" style="font-weight: bolder">{{ user.username }}</span>
                     </div>
@@ -26,7 +27,7 @@
         </div>
         <div class="col s9">
             <div class="card">
-            <div id="board" class="section grey lighten-3" style="height: 68vh; padding: 5px; overflow-y: scroll">
+            <div id="board" class="messages" style="height: 68vh; padding: 5px; overflow-y: scroll">
                 {% block messages %}
 
                 {% endblock %}
@@ -36,11 +37,11 @@
                 <div class="row">
                     <div class="col s11">
                         <div class="input-field">
-                            <input id="id_message" name="message" type="text" placeholder="Type your message..">
+                            <input id="msg_field" name="message" type="text" placeholder="Type your message..">
                         </div>
                     </div>
                     <div class="col s1" style="line-height: 80px">
-                        <button class="btn btn-floating blue lighten-2 waves-effect waves-light"><i class="material-icons">send</i></button>
+                        <button name="send" class="btn btn-floating blue lighten-2 waves-effect waves-light" id="send_btn"><i class="material-icons">send</i></button>
                     </div>
                 </div>
             </form>
@@ -55,15 +56,55 @@
         sender_id = "{{ receiver.id }}";
         receiver_id = "{{ request.user.id }}";
 
+        // //For sending
+        // $(function () {
+        //     scrolltoend();
+        //     $('#chat-box').on('submit', function (event) {
+        //         event.preventDefault();
+        //         var message = $('#id_message');
+        //         send('{{ request.user.username }}', '{{ receiver.username }}', message.val());
+        //         message.val('');
+        //     })
+        // })
+
+
+
+        var messageBody = document.querySelector('.messages');
+        messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+
+        function scrolltoend() {
+            $('#board').stop().animate({
+                scrollTop: $('#board')[0].scrollHeight
+            }, 800);
+         }
+
+        const text_box = '<div class="container darker">' +
+            '<img src="#" alt="Avatar" class="right" style="width:100%;">' +
+            '<p>{description}</p>' +
+            '<span class="time-right">{time}</span>' +
+            '</div>'
+
         //For sending
         $(function () {
-            scrolltoend();
             $('#chat-box').on('submit', function (event) {
                 event.preventDefault();
-                var message = $('#id_message');
-                send('{{ request.user.username }}', '{{ receiver.username }}', message.val());
+                var message = $('#msg_field');
+                send('{{ curr_user.username }}', '{{ friend.username }}', message.val());
                 message.val('');
             })
         })
+
+        function send(sender, receiver, message){
+
+            $.post('/api/messages', '{"sender_name": "' + sender + '", "receiver_name": "' +
+                    receiver + '","description": "' + message + '" }', function (data) {
+                var field = text_box.replace('{description}', message);
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes()
+                field = field.replace('{time}', time)
+                $('#board').append(field);
+                scrolltoend();
+            })
+        }
     </script>
 {% endblock %}

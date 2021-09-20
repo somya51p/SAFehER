@@ -20,5 +20,35 @@ $(function () {
     //Call receive function each 1 seconds to check for new messages in the database
     setInterval(receive,1000)
 })
+
+function scrolltoend() {
+    $('#board').stop().animate({
+        scrollTop: $('#board')[0].scrollHeight
+    }, 800);
+}
+
+$(function () {
+    setInterval(receive, 1000)
+})
+
+const text = '<div class="container">'
+            + '<img src="#" alt="Avatar" style="width:100%;">' +
+            '<p>{description}</p>' +
+            '<span class="time-left">{time}</span>' +
+            '</div>'
+
+function receive(){
+    $.get('/api/messages/' + sender_id + '/' + receiver_id, function(data){
+        if(data.length !== 0){
+            for(var i = 0; i < data.length; i++){
+                var field = text.replace('{description}', data[i].description);
+                var time = data[i].time.slice(0, 5) + ' a.m'
+                field = field.replace('{time}', time);
+                $('#board').append(field);
+                scrolltoend();
+            }
+        }
+    })
+}
 </script>
 {% endblock %}

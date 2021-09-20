@@ -31,15 +31,15 @@
                 <th>Sr.no.</th>
                 <th>Uploading date</th>
                 <th>Title</th>
+                <th>View</th>
                 <th>Description</th>
-                <th>Response</th>
             </tr>
             {% for i in notes %}
             <tr>
                 <th>{{ forloop.counter }}</th>
                 <th>{{ i.uploadedate }}</th>
                 <th>{{ i.user.username }}</th>
-                <th><a href="{{ i.reportfile.url }}" class="btn btn-warning">Open Magazines</a></th>
+                <th><a href="{{ i.magazinesfile.url }}" class="btn btn-warning">Open Magazines</a></th>
                 <th>{{ i.description }}</th>
             </tr>
             {% endfor %}
