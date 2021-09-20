@@ -20,8 +20,8 @@ class Notes(models.Model):
     description = models.CharField(max_length=300,null=True)
     status = models.CharField(max_length=30,null=True)
 
-    def __str__(self):
-        return self.signup.user.username+" "+self.status
+    # def __str__(self):
+    #     return self.signup.user.username+" "+self.status
 
 
 class Magazines(models.Model):
@@ -32,5 +32,5 @@ class Magazines(models.Model):
     description = models.CharField(max_length=300,null=True)
     status = models.CharField(max_length=30,null=True)
 
-    def __str__(self):
-        return self.signup.user.username+" "+self.status
+    # def __str__(self):
+    #     return self.signup.user.username+" "+self.status
